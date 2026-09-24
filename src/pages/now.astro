@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Update this date whenever you edit the page.
+const updated = new Date('2026-09-22');
+---
+<BaseLayout title="Now" description="What I'm focused on right now">
+  <h1>Now</h1>
+  <p class="meta">
+    Last updated {updated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+  </p>
+
+  <p>What I'm focused on at this point in my life.</p>
+
+  <h2>Working on</h2>
+  <ul>
+    <li>Setting up this blog.</li>
+  </ul>
+
+  <h2>Reading</h2>
+  <ul>
+    <li>Add a book here.</li>
+  </ul>
+
+  <h2>Learning</h2>
+  <ul>
+    <li>Add something you're learning here.</li>
+  </ul>
+
+  <p class="meta">
+    This is a <a href="https://nownownow.com/about">now page</a>.
+  </p>
+</BaseLayout>

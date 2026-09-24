@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Replace these with your own projects.
+const projects = [
+  {
+    name: 'This blog',
+    description: 'A minimal personal site built with Astro and plain markdown.',
+    url: '/',
+  },
+  {
+    name: 'Project name',
+    description: 'One or two sentences about what it does and why you built it.',
+    url: 'https://github.com/',
+  },
+];
+---
+<BaseLayout title="Projects" description="Things I've built">
+  <h1>Projects</h1>
+  <p>Things I've built or am building.</p>
+
+  <ul class="post-list">
+    {projects.map((project) => (
+      <li>
+        <a href={project.url}>{project.name}</a>
+        <div class="meta">{project.description}</div>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

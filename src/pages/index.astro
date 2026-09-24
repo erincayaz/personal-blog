@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+<BaseLayout title="Erinc's Blog" description="Personal blog">
+  <h1>Erinc's Blog</h1>
+  <p>Thoughts, notes, and things I'm working on.</p>
+
+  <h2>Recent posts</h2>
+  <PostList posts={posts} />
+  <p><a href="/blog/">All posts →</a></p>
+</BaseLayout>
