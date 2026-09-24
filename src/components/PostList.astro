@@ -6,12 +6,17 @@ interface Props {
 }
 const { posts } = Astro.props;
 ---
+
 <ul class="post-list">
   {posts.map((post) => (
     <li>
       <a href={`/blog/${post.id}/`}>{post.data.title}</a>
       <div class="meta">
-        {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {post.data.pubDate.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
       </div>
     </li>
   ))}

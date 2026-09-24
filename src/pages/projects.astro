@@ -1,30 +1,109 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Replace these with your own projects.
+// Replace these with your own projects. status is 'current' or 'past'.
 const projects = [
   {
     name: 'This blog',
-    description: 'A minimal personal site built with Astro and plain markdown.',
+    description: `A personal blog which is built Astro. In this blog I am planning
+    to write personal stuff, technical writings and also create a lab section in which
+    I plan to use as a playground for learning web stuffs.`,
     url: '/',
+    status: 'current',
   },
   {
-    name: 'Project name',
-    description: 'One or two sentences about what it does and why you built it.',
-    url: 'https://github.com/',
+    name: 'Obsidian Lens OCR',
+    description: `An Obsidian Plugin which helps users to convert their handwritten notes to
+    digital texts by using native OCR functionality. I am planning to add mobile support so that
+    users can take a photo of the page and convert it to text.`,
+    url: 'https://github.com/erincayaz/obsidian-lens-ocr',
+    status: 'current',
+  },
+  {
+    name: 'Obsidian Colored Text',
+    description: 'An Obsidian Plugin which helps users to color their texts using HTML.',
+    url: 'https://github.com/erincayaz/obsidian-colored-text',
+    status: 'maintenance',
+  },
+  {
+    name: 'Airline Manager 4 Bot',
+    description:
+      'A simple bot which runs on Github actions and automatically do simple operations.',
+    url: 'https://github.com/erincayaz/Airline-Manager-4-Bot',
+    status: 'maintenance',
+  },
+  {
+    name: 'Snowbrawll',
+    description: `A multiplayer game that I worked on for months. It was a really difficult but fun challenge.
+    I learned lots of stuff about networking, P2P connections, lags etc. In the end only 80 people bought the game
+    but the process was fun and educative so no regrets.`,
+    url: 'https://store.steampowered.com/app/2247510/Snowbrawll/',
+    status: 'past',
+  },
+  {
+    name: 'Occupancy Application',
+    description: `A web app that shows how occupied a building or room is, based on sensor data.
+    I worked on it for 1.5 years as a full-stack developer, mostly on the frontend.`,
+    url: 'https://www.siemens.com/en-us/products/building-x/applications/occupancy-application/',
+    status: 'past',
+  },
+  {
+    name: 'Drivetrain Analyzer Onsite',
+    description: `An on-premises web app that uses AI to detect problems in motors, pumps, and other drivetrain equipment
+    before they cause unplanned downtime. I worked on it as a full-stack developer, mostly on the frontend with React.`,
+    url: 'https://www.siemens.com/en-us/products/digital-drivetrain/analyzer-onsite/',
+    status: 'past',
   },
 ];
+
+const current = projects.filter((p) => p.status === 'current');
+const maintenance = projects.filter((p) => p.status === 'maintenance');
+const past = projects.filter((p) => p.status === 'past');
 ---
+
 <BaseLayout title="Projects" description="Things I've built">
   <h1>Projects</h1>
   <p>Things I've built or am building.</p>
 
-  <ul class="post-list">
-    {projects.map((project) => (
-      <li>
-        <a href={project.url}>{project.name}</a>
-        <div class="meta">{project.description}</div>
-      </li>
-    ))}
-  </ul>
+  <h2>Currently working on</h2>
+  {current.length > 0 ? (
+    <ul class="post-list">
+      {current.map((project) => (
+        <li>
+          <a href={project.url}>{project.name}</a>
+          <div class="meta">{project.description}</div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="meta">Nothing in progress right now.</p>
+  )}
+
+  <h2>In maintenance</h2>
+  {maintenance.length > 0 ? (
+    <ul class="post-list">
+      {maintenance.map((project) => (
+        <li>
+          <a href={project.url}>{project.name}</a>
+          <div class="meta">{project.description}</div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="meta">Nothing in maintenance right now.</p>
+  )}
+
+  <h2>Past projects</h2>
+  {past.length > 0 ? (
+    <ul class="post-list">
+      {past.map((project) => (
+        <li>
+          <a href={project.url}>{project.name}</a>
+          <div class="meta">{project.description}</div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="meta">Nothing here yet.</p>
+  )}
 </BaseLayout>

@@ -17,10 +17,10 @@ Create `src/content/blog/my-post-slug.md`:
 
 ```md
 ---
-title: "My Post Title"
-description: "One-line summary"
+title: 'My Post Title'
+description: 'One-line summary'
 pubDate: 2026-09-22
-tags: ["life", "code"]
+tags: ['life', 'code']
 ---
 
 Post content in markdown goes here.

@@ -2,30 +2,52 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Update this date whenever you edit the page.
-const updated = new Date('2026-09-22');
+const updated = new Date('2026-09-24');
 ---
+
 <BaseLayout title="Now" description="What I'm focused on right now">
   <h1>Now</h1>
   <p class="meta">
-    Last updated {updated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    Last updated{' '}
+    {updated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} from
+    my home in Istanbul
   </p>
 
-  <p>What I'm focused on at this point in my life.</p>
+  <h2>I decided to open this blog</h2>
+  <p>
+    I always wanted to create a blog page for myself but for some reason the effort felt rather big.
+    But today is different, because I have been really sick for 2 days I didn't do anything but
+    sleep. And right now I am little bit better. I'm well enough to get out of bed, but I'm not in
+    any condition to go outside. So to keep me entartained I decided to finally start creating my
+    personal blog.
+  </p>
 
-  <h2>Working on</h2>
-  <ul>
-    <li>Setting up this blog.</li>
-  </ul>
+  <br />
 
-  <h2>Reading</h2>
-  <ul>
-    <li>Add a book here.</li>
-  </ul>
+  <h2>I realized that (despite AI usage) Web is still fun to learn</h2>
+  <p>
+    I will write a blog post about how I started to like Web, Browsers, JavaScript etc. But for now
+    I can say that I want to deepen my knowledge in these fields and hopefully create something
+    meaningful which can be used by people.
+  </p>
 
-  <h2>Learning</h2>
-  <ul>
-    <li>Add something you're learning here.</li>
-  </ul>
+  <br />
+
+  <h2>Just for Fun: The Story of an Accidental Revolutionary</h2>
+  <p>
+    I started to read this book by Linus Torvalds. It was sitting in my backlog for a really long
+    time but it was really hard to find a hard copy of this book. One day while looking at second
+    hand platforms I saw this book which was in okay condition so I decided to buy it and now
+    reading it.
+  </p>
+
+  <br />
+
+  <h2>Bursa</h2>
+  <p>
+    I went to Bursa with my friends. And it was really great. It was like a daily trip so I feel
+    like I just scratched the surface of it and will definetly go there again.
+  </p>
 
   <p class="meta">
     This is a <a href="https://nownownow.com/about">now page</a>.
